@@ -9,9 +9,12 @@ function cust(){ //вешаем событие на нажатие html-кноп
   }}
 
   function custTwo(){ 
-    tg.sendData("aaa")
+    tg.MainButton.setText("text")
    }
 
    function custThree(){ 
-    tg.MainButton.onClick(custTwo)
+    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+      tg.sendData("some string that we need to send"); 
+      //при клике на основную кнопку отправляем данные в строковом виде
+    });
    }
