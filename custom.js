@@ -9,14 +9,11 @@ function cust(){ //вешаем событие на нажатие html-кноп
   }}
 
   function custTwo(){ 
-    tg.MainButton.setText("text")
+    tg.MainButton.setText("jjj")
    }
 
    function custThree(){ 
-    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
-      //при клике на основную кнопку отправляем данные в строковом виде
-    });
+    Telegram.WebApp.sendData(new Date().toString());
    }
 
 
@@ -24,4 +21,7 @@ function cust(){ //вешаем событие на нажатие html-кноп
     tg.sendData("some string that we need to send"); 
     //при клике на основную кнопку отправляем данные в строковом виде
  });
- window.Telegram.WebApp.sendData('test');
+ Telegram.WebApp.MainButton
+ .setText('CLOSE WEBVIEW')
+ .show()
+ .onClick(function(){ webviewClose(); });
