@@ -24,3 +24,4 @@ function cust(){ //вешаем событие на нажатие html-кноп
     tg.sendData("some string that we need to send"); 
     //при клике на основную кнопку отправляем данные в строковом виде
  });
+ window.Telegram.WebApp.sendData('test');
